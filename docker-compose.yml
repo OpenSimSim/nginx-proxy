@@ -1,7 +1,7 @@
 version: '2'
 services:
   lb:
-    image: andizzle/nginx-proxy:latest
+    image: 587737487888.dkr.ecr.us-west-2.amazonaws.com/oss-nginx-proxy:base
     external_links:
       - consul
     ports:
@@ -15,7 +15,7 @@ services:
       - "8500:8500"
       - "8600:53/udp"
     environment:
-      SERVICE_80_NAME: http
+      SERVICE_8500_NAME: http
       SERVICE_NAME: http
       SERVICE_TAGS: consul.dockerhost
   registrator:
